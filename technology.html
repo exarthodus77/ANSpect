@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Technology - ANSpect</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .tech-hero {
+        text-align: center;
+        padding: 150px 0 80px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .hero-content {
+        max-width: 800px;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    .hero-actions {
+        display: flex;
+        gap: 1rem;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .tech-stats {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 2rem;
+        margin: 3rem auto;
+        max-width: 800px;
+    }
+
+    .stat-item {
+        text-align: center;
+    }
+
+        .capacity-demo {
+            background: var(--darker-color);
+            padding: 4rem 0;
+            margin: 3rem 0;
+        }
+
+        .demo-container {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .slider-container {
+            margin: 3rem 0;
+        }
+
+        .slider {
+    width: 100%;
+    height: 8px;
+    background: rgba(255, 255, 255, 0.1); /* safe fallback */
+    border-radius: 4px;
+    outline: none;
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+/* Track */
+.slider::-webkit-slider-runnable-track {
+    height: 8px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+}
+
+/* Thumb */
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: white;
+    cursor: pointer;
+    margin-top: -4px;
+}
+
+/* Firefox */
+.slider::-moz-range-track {
+    height: 8px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+}
+
+.slider::-moz-range-thumb {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: white;
+    cursor: pointer;
+}
+
+
+        .slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            width: 24px;
+            height: 24px;
+            background: var(--primary-color);
+            border-radius: 50%;
+            cursor: pointer;
+        }
+
+        .demo-comparison {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .demo-item {
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: 12px;
+            padding: 2rem;
+        }
+
+        .demo-item.baseline {
+            border-color: var(--secondary-color);
+        }
+
+        .demo-item.anspect {
+            border-color: var(--primary-color);
+        }
+
+        .tech-features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .tech-feature {
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: 12px;
+            padding: 2.5rem;
+            text-align: center;
+            transition: var(--transition);
+        }
+
+        .tech-feature:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary-color);
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            display: block;
+        }
+
+        .business-impact {
+            background: var(--darker-color);
+            padding: 4rem 0;
+        }
+
+        .tech-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    margin: 3rem 0;
+}
+
+.stat-item {
+    text-align: center;
+}
+
+.stat-number {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+.stat-label {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+    </style>
+</head>
+<body>
+    <div class="content-overlay">
+        <!-- Header -->
+        <header class="header">
+            <div class="container">
+                <div class="header-content">
+                    <a href="index.html" class="logo">
+    <img src="assets/images/logo-placeholder.png" alt="ANSpect Logo" style="height: 60px !important;">
+</a>
+                    <nav class="nav">
+                        <ul class="nav-list">
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="technology.html" class="active">Technology</a></li>
+                            <li><a href="about.html">About</a></li>
+                            <li><a href="careers.html">Careers</a></li>
+                            <li><a href="index.html#contact" class="btn-outline">Contact Us</a></li>
+                        </ul>
+                    </nav>
+                    <div class="mobile-menu-toggle">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Tech Hero -->
+        <section class="tech-hero">
+            <div class="container">
+                <div class="hero-content">
+                    <h1 class="hero-title">Supercharge Wireless Capacity</h1>
+                    <p class="hero-subtitle">Pure Software. Zero Hardware.</p>
+                    <p class="hero-description">
+                        ANSpect's patented PHY engine boosts RAN throughput by 40–60% using software-only upgrades. 
+                        No new spectrum, no new antennas — just smarter bits.
+                    </p>
+                    <div class="hero-actions">
+                        <a href="#capacity-demo" class="btn-primary">
+                            <span>See capacity demo</span>
+                            <span>▶</span>
+                        </a>
+                        <a href="#how-it-works" class="btn-secondary">How the technology works</a>
+                    </div>
+                    
+                    <div class="stats">
+                        <div class="stat-item">
+                            <div class="stat-number">150+</div>
+                            <div class="stat-label">Wireless patents</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">40-60%</div>
+                            <div class="stat-label">Throughput boost</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">5G</div>
+                            <div class="stat-label">Testbed validated</div>
+                        </div>
+                    </div>
+                    <div class="tech-stats">
+    <div class="stat-item">
+        <div class="stat-number">150+</div>
+        <div class="stat-label">Wireless patents</div>
+    </div>
+    <div class="stat-item">
+        <div class="stat-number">40-60%</div>
+        <div class="stat-label">Throughput boost</div>
+    </div>
+    <div class="stat-item">
+        <div class="stat-number">5G</div>
+        <div class="stat-label">Testbed validated</div>
+    </div>
+</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Super Capacity Mode -->
+        <section id="capacity-demo" class="capacity-demo">
+            <div class="container">
+                <div class="demo-container">
+                    <h2>Super Capacity Mode</h2>
+                    <p style="color: var(--text-secondary); margin-bottom: 1rem;">
+                        +48% Average sector throughput uplift<br>
+                        Drop-in PHY module · No RF redesign
+                    </p>
+                    
+                    <h3 style="margin-bottom: 1rem;">Drag the slider to see your cell's capacity boost</h3>
+                    <p style="color: var(--text-secondary); margin-bottom: 2rem;">
+                        Baseline networks leave usable constellation space and channel diversity on the table. 
+                        ANSpect safely embeds extra bits into those gaps, turning the same spectrum into more usable capacity.
+                    </p>
+                    <p style="color: var(--text-secondary); margin-bottom: 2rem;">
+                        This mock shows a typical boost between 40–60% depending on radio conditions and deployment.
+                    </p>
+                    
+                    <div class="slider-container">
+                        <input type="range" min="0" max="100" value="0" class="slider" id="capacity-slider">
+                    </div>
+                    
+                    <div class="demo-comparison">
+                        <div class="demo-item baseline">
+                            <h4>Baseline</h4>
+                            <div class="stat-number">100%</div>
+                            <p>Baseline cell</p>
+                        </div>
+                        <div class="demo-item anspect">
+                            <h4>With ANSpect</h4>
+                            <div class="stat-number" id="capacity-value">148%</div>
+                            <p>With ANSpect</p>
+                        </div>
+                    </div>
+                    
+                    <p style="color: var(--text-secondary); font-size: 0.9rem; margin-top: 2rem;">
+                        For illustration only. Actual uplift depends on scheduler, MCS distribution, UE mix, and deployment scenario.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Technology Details -->
+        <section id="how-it-works">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Inside the ANSpect PHY Engine</h2>
+                    <p>ANSpect enhances the modulation layer to exploit block-sparse constellations and cross-user capacity embedding, while remaining transparent to upper protocol layers and RRM.</p>
+                </div>
+                
+                <div class="tech-features">
+                    <div class="tech-feature">
+                        <div class="feature-icon">▢</div>
+                        <h3>Block-sparse constellation mapping</h3>
+                        <p>Encodes extra information into under-utilized regions of the QAM constellation, staying within EVM targets and RF linearity constraints.</p>
+                    </div>
+                    
+                    <div class="tech-feature">
+                        <div class="feature-icon">⇄</div>
+                        <h3>Cross-user capacity embedding</h3>
+                        <p>Leverages channel quality differences between UEs to "piggyback" extra bits during transmissions otherwise dominated by the weakest link.</p>
+                    </div>
+                    
+                    <div class="tech-feature">
+                        <div class="feature-icon">⚙</div>
+                        <h3>Drop-in PHY module</h3>
+                        <p>Integrates as a software module alongside existing 4G/5G PHY blocks (mod/demod, FEC, channel estimation) with minimal changes to RFIC or scheduler.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Business Impact -->
+        <section class="business-impact">
+            <div class="container">
+                <div class="section-header">
+                    <h2>For RAN & FWA Vendors</h2>
+                    <p>Turn capacity into a new software license tier</p>
+                </div>
+                
+                <div style="text-align: center; max-width: 800px; margin: 0 auto;">
+                    <p style="color: var(--text-secondary); margin-bottom: 2rem; font-size: 1.1rem;">
+                        Package ANSpect as a "Super Capacity Mode" add-on that unlocks extra throughput per sector. 
+                        Higher recurring software revenue — no new HW.
+                    </p>
+                    
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; margin: 3rem 0;">
+                        <div>
+                            <h4 style="color: var(--primary-color); margin-bottom: 1rem;">40–60% more throughput</h4>
+                            <p style="color: var(--text-secondary); font-size: 0.9rem;">per sector in typical deployments</p>
+                        </div>
+                        <div>
+                            <h4 style="color: var(--primary-color); margin-bottom: 1rem;">No new spectrum</h4>
+                            <p style="color: var(--text-secondary); font-size: 0.9rem;">or RF upgrades required</p>
+                        </div>
+                        <div>
+                            <h4 style="color: var(--primary-color); margin-bottom: 1rem;">Drops into existing</h4>
+                            <p style="color: var(--text-secondary); font-size: 0.9rem;">PHY/RLC/MAC stack</p>
+                        </div>
+                        <div>
+                            <h4 style="color: var(--primary-color); margin-bottom: 1rem;">Great for</h4>
+                            <p style="color: var(--text-secondary); font-size: 0.9rem;">tiered licensing</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testbed Validation -->
+        <section>
+            <div class="container">
+                <div class="section-header">
+                    <h2>Proven on Real 5G Testbeds</h2>
+                    <p>ANSpect is validated using SDR-based 5G NR stacks, including indoor and outdoor trials, with ongoing collaborations across academia and industry.</p>
+                </div>
+                
+                <div class="tech-features">
+                    <div class="tech-feature">
+                        <div class="feature-icon">5G</div>
+                        <h3>Indoor 5G NR validation</h3>
+                        <p>End-to-end validation across MCS, CQI, scheduling, and multi-user PHY interactions.</p>
+                    </div>
+                    
+                    <div class="tech-feature">
+                        <div class="feature-icon">🏙</div>
+                        <h3>Outdoor FWA trials</h3>
+                        <p>Real-world trials measuring per-UE throughput, cell-edge speed, and sector capacity improvements.</p>
+                    </div>
+                    
+                    <div class="tech-feature">
+                        <div class="feature-icon">📑</div>
+                        <h3>Joint publications</h3>
+                        <p>ANSpect supports joint research publications and sharing of test results with operators and vendors.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="container">
+                <div class="footer-content">
+                    <div class="footer-section">
+                        <div class="footer-logo">
+                            <img src="assets/images/logo-placeholder.png" alt="ANSpect Logo">
+                        </div>
+                        <p>Supercharge Wireless Capacity — Pure Software. Zero Hardware.</p>
+                        <div class="social-links">
+                            <a href="#" aria-label="Twitter">𝕏</a>
+                            <a href="#" aria-label="LinkedIn">in</a>
+                            <a href="#" aria-label="YouTube">▶</a>
+                        </div>
+                    </div>
+                    <div class="footer-section">
+                        <h3>Technology</h3>
+                        <ul>
+                            <li><a href="technology.html">How It Works</a></li>
+                            <li><a href="#how-it-works">PHY Engine</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-section">
+                        <h3>Company</h3>
+                        <ul>
+                            <li><a href="about.html">About Us</a></li>
+                            <li><a href="careers.html">Careers</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-section">
+                        <h3>Support</h3>
+                        <ul>
+                            <li><a href="index.html#contact">Contact Us</a></li>
+                            <li><a href="#">FAQ</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <p>&copy; 2025 ANSpect — All Rights Reserved</p>
+                </div>
+            </div>
+        </footer>
+
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.net.min.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+        // Vanta Background
+        if (typeof VANTA !== 'undefined') {
+            VANTA.NET({
+                el: "body",
+                mouseControls: true,
+                touchControls: true,
+                gyroControls: false,
+                minHeight: 200.00,
+                minWidth: 200.00,
+                scale: 1.00,
+                scaleMobile: 1.00,
+                color: 0x3fa4ff,
+                backgroundColor: 0x0,
+                points: 11.00,
+                maxDistance: 22.00,
+                spacing: 16.00
+            });
+        }
+
+        // Capacity slider
+        const slider = document.getElementById('capacity-slider');
+        const capacityValue = document.getElementById('capacity-value');
+        
+        if (slider && capacityValue) {
+            slider.addEventListener('input', function() {
+                const value = 100 + (this.value * 0.48);
+                capacityValue.textContent = Math.round(value) + '%';
+            });
+        }
+    </script>
+</body>
+</html>
