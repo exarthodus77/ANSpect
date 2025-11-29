@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Control Panel - ANSpect</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/components.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .admin-container {
+            max-width: 1000px;
+            margin: 100px auto 50px;
+            padding: 0 20px;
+        }
+        
+        .admin-panel {
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: 12px;
+            padding: 2rem;
+            backdrop-filter: blur(10px);
+        }
+        
+        .admin-section {
+            margin-bottom: 2rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid var(--glass-border);
+        }
+        
+        .admin-section:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+        
+        .admin-section h2 {
+            margin-bottom: 1.5rem;
+            color: var(--primary-color);
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+        
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 12px 16px;
+            background: rgba(0, 0, 0, 0.2);
+            border: 1px solid var(--glass-border);
+            border-radius: 6px;
+            color: var(--text-primary);
+            font-family: 'Inter', sans-serif;
+        }
+        
+        .form-group textarea {
+            min-height: 100px;
+            resize: vertical;
+        }
+        
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+        
+        .preview-area {
+            margin-top: 1rem;
+            padding: 1rem;
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 6px;
+            min-height: 100px;
+        }
+        
+        .logo-preview {
+            max-width: 200px;
+            margin-top: 1rem;
+        }
+        
+        .admin-actions {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+        
+        @media (max-width: 768px) {
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <a href="../index.html" class="logo">
+                    <img src="../assets/images/anspect-logo.png" alt="ANSpect Logo" id="header-logo">
+                </a>
+                <nav class="nav">
+                    <ul class="nav-list">
+                        <li><a href="../index.html">Back to Site</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Admin Panel -->
+    <div class="admin-container">
+        <div class="admin-panel">
+            <h1>ANSpect Admin Control Panel</h1>
+            
+            <form id="admin-form">
+                <!-- Logo Management -->
+                <div class="admin-section">
+                    <h2>Logo Management</h2>
+                    <div class="form-group">
+                        <label for="header-logo-upload">Upload Header Logo</label>
+                        <input type="file" id="header-logo-upload" accept="image/*">
+                        <div class="preview-area">
+                            <p>Current Header Logo:</p>
+                            <img src="../assets/images/anspect-logo.png" alt="Current Header Logo" class="logo-preview" id="header-logo-preview">
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="footer-logo-upload">Upload Footer Logo</label>
+                        <input type="file" id="footer-logo-upload" accept="image/*">
+                        <div class="preview-area">
+                            <p>Current Footer Logo:</p>
+                            <img src="../assets/images/anspect-logo.png" alt="Current Footer Logo" class="logo-preview" id="footer-logo-preview">
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Contact Information -->
+                <div class="admin-section">
+                    <h2>Contact Information</h2>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="contact-email">Email Address</label>
+                            <input type="email" id="contact-email" value="sales@anspect.com">
+                        </div>
+                        <div class="form-group">
+                            <label for="contact-phone">Phone Number</label>
+                            <input type="text" id="contact-phone" value="+1 (234) 567-890">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="contact-address">Address</label>
+                        <textarea id="contact-address">123 ANSpect Street, Tech City, Country</textarea>
+                    </div>
+                </div>
+                
+                <!-- Newsletter Management -->
+                <div class="admin-section">
+                    <h2>Newsletter Management</h2>
+                    <div class="form-group">
+                        <label for="newsletter-title">Newsletter Title</label>
+                        <input type="text" id="newsletter-title" value="Subscribe to Our Newsletter">
+                    </div>
+                    <div class="form-group">
+                        <label for="newsletter-description">Newsletter Description</label>
+                        <textarea id="newsletter-description">Stay updated with ANSpect — new research, product updates, wireless technology insights, and engineering breakthroughs delivered straight to your inbox.</textarea>
+                    </div>
+                </div>
+                
+                <!-- Social Media Links -->
+                <div class="admin-section">
+                    <h2>Social Media Links</h2>
+                    <div class="form-group">
+                        <label for="twitter-url">Twitter URL</label>
+                        <input type="url" id="twitter-url" value="#">
+                    </div>
+                    <div class="form-group">
+                        <label for="linkedin-url">LinkedIn URL</label>
+                        <input type="url" id="linkedin-url" value="#">
+                    </div>
+                    <div class="form-group">
+                        <label for="youtube-url">YouTube URL</label>
+                        <input type="url" id="youtube-url" value="#">
+                    </div>
+                </div>
+                
+                <!-- Footer Text -->
+                <div class="admin-section">
+                    <h2>Footer Text</h2>
+                    <div class="form-group">
+                        <label for="footer-tagline">Footer Tagline</label>
+                        <input type="text" id="footer-tagline" value="Supercharge Wireless Capacity — Pure Software. Zero Hardware.">
+                    </div>
+                    <div class="form-group">
+                        <label for="copyright-text">Copyright Text</label>
+                        <input type="text" id="copyright-text" value="© 2025 ANSpect — All Rights Reserved">
+                    </div>
+                </div>
+                
+                <!-- Actions -->
+                <div class="admin-actions">
+                    <button type="submit" class="btn-primary">Save Changes</button>
+                    <button type="reset" class="btn-secondary">Reset to Default</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const adminForm = document.getElementById('admin-form');
+            
+            // Handle form submission
+            adminForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // In a real application, you would send this data to a server
+                // For this demo, we'll just show an alert
+                alert('Changes saved successfully!');
+                
+                // In a real implementation, you would update the website content
+                // based on the form values
+            });
+            
+            // Handle logo preview
+            const headerLogoUpload = document.getElementById('header-logo-upload');
+            const footerLogoUpload = document.getElementById('footer-logo-upload');
+            const headerLogoPreview = document.getElementById('header-logo-preview');
+            const footerLogoPreview = document.getElementById('footer-logo-preview');
+            
+            headerLogoUpload.addEventListener('change', function(e) {
+                const file = e.target.files[0];
+                if (file) {
+                    const reader = new FileReader();
+                    reader.onload = function(e) {
+                        headerLogoPreview.src = e.target.result;
+                    };
+                    reader.readAsDataURL(file);
+                }
+            });
+            
+            footerLogoUpload.addEventListener('change', function(e) {
+                const file = e.target.files[0];
+                if (file) {
+                    const reader = new FileReader();
+                    reader.onload = function(e) {
+                        footerLogoPreview.src = e.target.result;
+                    };
+                    reader.readAsDataURL(file);
+                }
+            });
+        });
+    </script>
+</body>
+</html>
